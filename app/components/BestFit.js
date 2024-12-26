@@ -35,38 +35,54 @@ const BestFit = ({ holes }) => {
   };
 
   return (
-    <div style={{ border: "1px solid black", padding: "20px", margin: "10px" }}>    
+    <div style={{ border: "1px solid black", padding: "20px", margin: "10px" }}>
       <p>Hole memori: {bestFitHoles.join(" KB, ")} KB</p>
-      <input
-        type="number"
-        placeholder="Ukuran proses (KB)"
-        value={processSize}
-        onChange={(e) => setProcessSize(e.target.value)}
+      <div
         style={{
-          color: "black", // Warna teks input
-          padding: "5px",
-          border: "1px solid #ccc",
-          borderRadius: "5px",
-          outline: "none",
-        }}
-      />
-      <button
-        onClick={handleBestFit}
-        style={{
-          marginLeft: "10px",
-          padding: "5px 10px",
-          backgroundColor: "#007BFF",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginBottom: "10px",
         }}
       >
-        Jalankan Best Fit
-      </button>
-      <p>{result}</p>
+        <input
+          type="number"
+          placeholder="Ukuran proses (KB)"
+          value={processSize}
+          onChange={(e) => setProcessSize(e.target.value)}
+          style={{
+            color: "black",
+            padding: "5px",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+            outline: "none",
+            marginBottom: "20px",
+            marginTop: "50px",
+            width: "200px",
+            textAlign: "center",
+          }}
+        />
+        <button
+          onClick={handleBestFit}
+          style={{
+            padding: "5px 10px",
+            backgroundColor: "#007BFF",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+            width: "200px",
+            marginBottom: "20px",
+          }}
+        >
+          Jalankan Best Fit
+        </button>
+      </div>
+      <p style={{ textAlign: "center" }}>{result}</p>
     </div>
   );
+  
+  
 };
 
 export default BestFit;

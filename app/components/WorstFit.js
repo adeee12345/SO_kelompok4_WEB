@@ -37,36 +37,51 @@ const WorstFit = ({ holes }) => {
   return (
     <div style={{ border: "1px solid black", padding: "20px", margin: "10px" }}>
       <p>Hole memori: {worstFitHoles.join(" KB, ")} KB</p>
-      <input
-        type="number"
-        placeholder="Ukuran proses (KB)"
-        value={processSize}
-        onChange={(e) => setProcessSize(e.target.value)}
+      <div
         style={{
-          color: "black", // Warna teks input
-          padding: "5px",
-          border: "1px solid #ccc",
-          borderRadius: "5px",
-          outline: "none",
-        }}
-      />
-      <button
-        onClick={handleWorstFit}
-        style={{
-          marginLeft: "10px",
-          padding: "5px 10px",
-          backgroundColor: "#007BFF",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginBottom: "10px",
         }}
       >
-        Jalankan Worst Fit
-      </button>
-      <p>{result}</p>
+        <input
+          type="number"
+          placeholder="Ukuran proses (KB)"
+          value={processSize}
+          onChange={(e) => setProcessSize(e.target.value)}
+          style={{
+            color: "black",
+            padding: "5px",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+            outline: "none",
+            marginBottom: "20px",
+            marginTop: "50px",
+            width: "200px", // Menentukan lebar input
+            textAlign: "center", // Menengahkan teks dalam input
+          }}
+        />
+        <button
+          onClick={handleWorstFit}
+          style={{
+            padding: "5px 10px",
+            backgroundColor: "#007BFF",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+            width: "200px", // Menentukan lebar tombol
+            marginBottom: "20px",
+          }}
+        >
+          Jalankan Worst Fit
+        </button>
+      </div>
+      <p style={{ textAlign: "center" }}>{result}</p>
     </div>
   );
+  
 };
 
 export default WorstFit;
